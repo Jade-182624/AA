@@ -81,6 +81,10 @@
         {
             "name": "自定义识别与动作示例",
             "entry": "FindSmallestNumber"
+        },
+        {
+            "name": "火影",
+            "entry": "点击排行"
         }
     ],
     "option": {
