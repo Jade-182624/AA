@@ -1,8 +1,0 @@
-{
-    "点击排行": {
-        "recognition": "OCR",
-        "expected": "排行",
-        "action": "Click",
-        "max_hit": 1
-    }
-}
