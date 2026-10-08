@@ -14,7 +14,8 @@
         "action": "Click",
         "next": [
             "点击一键完成"
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "点击一键完成": {
         "recognition": "OCR",
