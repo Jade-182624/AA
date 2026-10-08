@@ -1,0 +1,51 @@
+{
+    "点击任务": {
+        "recognition": "OCR",
+        "expected": "任务",
+        "action": "Click",
+        "max_hit": 1,
+        "next": [
+            "点击小秘书"
+        ]
+    },
+    "点击小秘书": {
+        "recognition": "OCR",
+        "expected": "小秘书",
+        "action": "Click",
+        "post_wait_freezes": 750,
+        "next": [
+            "点击一键完成"
+        ]
+    },
+    "点击一键完成": {
+        "recognition": "OCR",
+        "expected": "一键完成",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "再次点击一键完成"
+        ]
+    },
+    "再次点击一键完成": {
+        "recognition": "OCR",
+        "expected": "一键完成",
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "关闭小秘书界面"
+        ]
+    },
+    "关闭小秘书界面": {
+        "recognition": "TemplateMatch",
+        "template": "关闭小秘书界面.png",
+        "action": "Click",
+        "next": [
+            "关闭任务界面"
+        ]
+    },
+    "关闭任务界面": {
+        "recognition": "TemplateMatch",
+        "template": "关闭任务界面.png",
+        "action": "Click"
+    }
+}
