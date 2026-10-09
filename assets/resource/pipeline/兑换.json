@@ -3,7 +3,152 @@
         "recognition": "OCR",
         "expected": "兑换",
         "action": "Click",
-        "max_hit": 1,
+        "post_wait_freezes": 2000,
+        "next": [
+            "点击神秘商店"
+        ]
+    },
+    "点击神秘商店": {
+        "recognition": "OCR",
+        "expected": "神秘商店",
+        "action": "Click",
+        "next": [
+            "检测售罄1"
+        ]
+    },
+    "检测售罄1": {
+        "recognition": "TemplateMatch",
+        "template": "售罄.png",
+        "roi": [
+            316,
+            216,
+            167,
+            121
+        ],
+        "timeout": 1000,
+        "next": [
+            "检测售罄2"
+        ], // 找到售罄 → 跳过第一个商品，去检测第二个
+        "on_error": [
+            "购买第一个"
+        ] // 没找到 → 正常购买第一个
+    },
+    "购买第一个": {
+        "recognition": "DirectHit",
+        "target": [
+            316,
+            216,
+            167,
+            121
+        ],
+        "action": "Click",
+        "next": [
+            "确认购买1"
+        ]
+    },
+    "确认购买1": {
+        "recognition": "OCR",
+        "expected": "兑换",
+        "action": "Click",
+        "timeout": 2000,
+        "next": [
+            "检测售罄2"
+        ]
+    },
+    "检测售罄2": {
+        "recognition": "TemplateMatch",
+        "template": "售罄.png",
+        "roi": [
+            536,
+            219,
+            174,
+            116
+        ],
+        "timeout": 1000,
+        "next": [
+            "检测售罄3"
+        ], // 找到售罄 → 跳过第二个商品
+        "on_error": [
+            "购买第二个"
+        ]
+    },
+    "购买第二个": {
+        "recognition": "DirectHit",
+        "target": [
+            536,
+            219,
+            174,
+            116
+        ],
+        "action": "Click",
+        "next": [
+            "确认购买2"
+        ]
+    },
+    "确认购买2": {
+        "recognition": "OCR",
+        "expected": "兑换",
+        "action": "Click",
+        "timeout": 2000,
+        "next": [
+            "检测售罄3"
+        ]
+    },
+    "检测售罄3": {
+        "recognition": "TemplateMatch",
+        "template": "售罄.png",
+        "roi": [
+            762,
+            218,
+            171,
+            119
+        ],
+        "timeout": 1000,
+        "next": [
+            "购买第三个"
+        ], // 找到售罄 → 跳过第三个，直接去刷新
+        "on_error": [
+            "点击免费刷新"
+        ]
+    },
+    "购买第三个": {
+        "recognition": "DirectHit",
+        "target": [
+            762,
+            218,
+            171,
+            119
+        ],
+        "action": "Click",
+        "next": [
+            "确认购买3"
+        ]
+    },
+    "确认购买3": {
+        "recognition": "OCR",
+        "expected": "兑换",
+        "action": "Click",
+        "timeout": 2000,
+        "next": [
+            "点击免费刷新"
+        ]
+    },
+    "点击免费刷新": {
+        "recognition": "OCR",
+        "expected": "免费",
+        "action": "Click",
+        "timeout": 2000,
+        "next": [
+            "检测售罄1"
+        ],
+        "on_error": [
+            "退出商店"
+        ]
+    },
+    "退出商店": {
+        "recognition": "TemplateMatch",
+        "template": "退出兑换.png",
+        "action": "Click",
         "next": []
     }
 }

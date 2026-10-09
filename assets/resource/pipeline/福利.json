@@ -27,6 +27,7 @@
         "recognition": "OCR",
         "expected": "领取体力",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "开始领取体力",
             "退出福利界面"
