@@ -3,7 +3,6 @@
         "recognition": "OCR",
         "expected": "任务",
         "action": "Click",
-        "max_hit": 1,
         "next": [
             "点击小秘书"
         ]
@@ -12,7 +11,7 @@
         "recognition": "OCR",
         "expected": "小秘书",
         "action": "Click",
-        "post_wait_freezes": 750,
+        "post_wait_freezes": 750, // 等待小秘书界面加载完成
         "next": [
             "点击一键完成"
         ]
@@ -21,7 +20,7 @@
         "recognition": "OCR",
         "expected": "一键完成",
         "action": "Click",
-        "post_delay": 5000,
+        "post_delay": 5000, // 等待一键完成界面加载完成
         "next": [
             "再次点击一键完成"
         ]
@@ -30,7 +29,7 @@
         "recognition": "OCR",
         "expected": "一键完成",
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 3000, // 等待一键完成界面加载完成
         "next": [
             "关闭小秘书界面"
         ]
@@ -45,7 +44,7 @@
     },
     "关闭任务界面": {
         "recognition": "TemplateMatch",
-        "template": "关闭任务界面.png",
+        "template": "关闭.png",
         "action": "Click"
     }
 }

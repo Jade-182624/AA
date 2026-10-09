@@ -3,7 +3,64 @@
         "recognition": "OCR",
         "expected": "任务",
         "action": "Click",
-        "max_hit": 1,
-        "next": []
+        "post_wait_freezes": 750, // 等待任务界面加载完成
+        "next": [
+            "点击日常任务"
+        ]
+    },
+    "点击日常任务": {
+        "recognition": "OCR",
+        "expected": "日常任务",
+        "action": "Click",
+        "next": [
+            "开始领取日常",
+            "点击周常任务"
+        ]
+    },
+    "开始领取日常": {
+        "recognition": "TemplateMatch",
+        "template": "领取.png",
+        "order_by": "Vertical", // 竖直方向从上到下排序，防止点到“领取全部”
+        "action": "Click",
+        "next": [
+            "开始领取日常"
+        ],
+        "timeout": 1000,
+        "on_error": [
+            "点击周常任务"
+        ],
+        "exceeded_next": [
+            "点击周常任务"
+        ]
+    },
+    "点击周常任务": {
+        "recognition": "OCR",
+        "expected": "周常任务",
+        "action": "Click",
+        "next": [
+            "开始领取周常",
+            "退出任务界面"
+        ]
+    },
+    "开始领取周常": {
+        "recognition": "TemplateMatch",
+        "template": "领取.png",
+        "order_by": "Vertical", // 竖直方向从上到下排序，防止点到“领取全部”
+        "action": "Click",
+        "next": [
+            "开始领取日常"
+        ],
+        "timeout": 1000,
+        "on_error": [
+            "点击周常任务"
+        ],
+        "exceeded_next": [
+            "点击周常任务"
+        ]
+    },
+    "退出任务界面": {
+        "recognition": "TemplateMatch",
+        "template": "关闭.png",
+        "action": "Click"
     }
 }
