@@ -1,0 +1,9 @@
+{
+    "点击福利": {
+        "recognition": "OCR",
+        "expected": "福利",
+        "action": "Click",
+        "max_hit": 1,
+        "next": []
+    }
+}

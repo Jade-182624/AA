@@ -1,0 +1,9 @@
+{
+    "点击任务1": {
+        "recognition": "OCR",
+        "expected": "任务",
+        "action": "Click",
+        "max_hit": 1,
+        "next": []
+    }
+}

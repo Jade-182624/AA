@@ -1,0 +1,9 @@
+{
+    "点击兑换": {
+        "recognition": "OCR",
+        "expected": "兑换",
+        "action": "Click",
+        "max_hit": 1,
+        "next": []
+    }
+}

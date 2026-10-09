@@ -1,0 +1,9 @@
+{
+    "点击忍界远征": {
+        "recognition": "OCR",
+        "expected": "忍界远征",
+        "action": "Click",
+        "max_hit": 1,
+        "next": []
+    }
+}
